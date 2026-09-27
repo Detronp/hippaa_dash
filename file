@@ -1,0 +1,15 @@
+It solves the classic problem for healthcare teams: "We need people to see insights from patient data, but doing that safely is expensive, slow, and risky."
+
+Audit-ready by default. HIPAA requires you to know who accessed patient data and when. Every query is logged with the user's identity, and CloudTrail records every read of the data files, kept for 6 years.
+
+No accidental exposure. Buckets can't be made public, unencrypted connections are refused, and data is encrypted with a key you control. The usual ways PHI leaks, like a misconfigured S3 bucket or someone exporting a spreadsheet, are closed off.
+
+Minimum necessary access. Users can only run reports you've approved, and those show summary numbers, not raw patient records. Small groups are hidden, so a report can't accidentally single out one patient.
+
+Access tied to your company login. No separate passwords to manage. When someone leaves and IT disables them in Okta or Azure AD, they lose dashboard access immediately, and MFA is enforced there.
+
+No paying for idle servers. Typical HIPAA setups put databases, BI tools and servers in a private network running 24/7, often $200–$1,000+/month before anyone uses them. This stack costs roughly $5–10/month at small scale and grows only with actual use.
+
+No per-seat BI licensing. Tools like Tableau or QuickSight charge per user. Here, adding users costs close to nothing.
+
+Runaway query protection. Each query has a scan cap, identical queries reuse cached results for an hour, and a budget alert emails you before a surprise bill.
